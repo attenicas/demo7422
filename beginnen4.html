@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var counter=0;
+        function gaan(){
+            nogiets();// de aanroep van een functie mag vervangen worden door datgene dat hij returned
+            
+        }
+        
+        // 1 soms is een getal een string
+        // 2 in een antwoord mag html zitten concateneren
+        // 3 met += komt het erbij
+        function nogiets(){
+            var denaam = document.getElementById("invoerveld").value;
+            var hetgetal = parseInt(denaam);
+            console.log("counter is: "+counter);
+            counter++;
+            if (counter%2==0) {
+                document.getElementById("uitvoer").style.backgroundColor="red";
+            }
+            else {
+                document.getElementById("uitvoer").style.backgroundColor="green";
+            }
+            document.getElementById("uitvoer").innerHTML += "<h1 >"+"Henk is "+(hetgetal + hetgetal)+" jaar oud." +"</h1>";
+        }
+    </script>
+</head>
+<body>
+    <input type=button onclick="gaan()" value="klik hier">
+    <input type="text" id="invoerveld">
+    <div id="uitvoer"></div>
+</body>
+</html>
